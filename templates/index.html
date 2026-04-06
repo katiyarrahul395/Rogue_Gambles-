@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top 10 Wagerers</title>
+    <style>
+        body { font-family: sans-serif; background: #1a1a1a; color: white; text-align: center; }
+        table { margin: 50px auto; border-collapse: collapse; width: 60%; background: #2a2a2a; }
+        th, td { padding: 15px; border-bottom: 1px solid #444; }
+        th { background: #ff4500; color: white; text-transform: uppercase; }
+        tr:hover { background: #333; }
+        .rank { font-weight: bold; color: #ff4500; }
+    </style>
+</head>
+<body>
+    <h1>🏆 Top 10 Wager Leaderboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>User ID</th>
+                <th>Wager Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for player in players %}
+            <tr>
+                <td class="rank">#{{ loop.index }}</td>
+                <td>{{ player.user_id }}</td>
+                <td>${{ "{:,.2f}".format(player.wager) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
