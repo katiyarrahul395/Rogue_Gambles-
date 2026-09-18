@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: rogue-gambles-game
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: ./octagon-clash
